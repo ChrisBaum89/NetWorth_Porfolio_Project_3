@@ -7,16 +7,27 @@ Models
 ----------------
 
 User
+  username
+  email
+  password_digest
+  timestamps
 
-	has many categories
+	has many accounts
 	has many categories through accounts
 
 Category (Investments, House, Crypto, Credit Card <= predefined by admin)
+  name
 
  	has many accounts
-	has many users through accounts (use for data mining)
+	has many users through accounts
 
 Account
+  Name
+  Type (Asset or Liability)
+  Value ($ amount)
+  user_id
+  category_id
+
 	belongs_to user
 	belongs_to category
 
