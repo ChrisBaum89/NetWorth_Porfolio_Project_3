@@ -5,7 +5,7 @@
 <!---need to be able to display categories and accounts under each category--->
 
 <% @categories.each do |category| %>
-  <h3><%= category.name %> ($<%=category.dollar_value%>)</h3>
+  <h3><%= category.name %> ($<%=category.user_category_value_calc(@user)%>)</h3>
 
   <% @user.accounts.each do |account| %>
     <% if account.category_id == category.id %>
