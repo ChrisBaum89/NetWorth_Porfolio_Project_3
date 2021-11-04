@@ -7,12 +7,8 @@ class User < ApplicationRecord
   def net_worth_calc
     self.net_worth = 0
     self.accounts.each do |account|
-      if account.account_type == "asset"
-        self.net_worth = self.net_worth + account.dollar_value
-      elsif account.account_type == "debt"
-        self.net_worth = self.net_worth - account.dollar_value
-      else
-      end
+      account.asset_or_debt
+      self.net_worth = self.net_worth + account.dollar_value
     end
     self.save
     self.net_worth
