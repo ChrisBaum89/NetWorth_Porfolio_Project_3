@@ -2,10 +2,10 @@
   <br>Account Name:<br>
   <%= f.text_field :name %><br><br>
 
-  <br>Type (Asset or Debt):<br>
+  <br>Asset or Debt?:<br>
   <%= f.select :account_type, ["Asset", "Debt"] %><br><br>
 
-  <br>Account Category:<br>
+  <br>Category:<br>
   <%= f.collection_select :category_id, Category.order(:name),:id,:name, include_blank: false %><br><br>
 
   <br>Value ($):<br>
