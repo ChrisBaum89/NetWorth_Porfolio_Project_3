@@ -8,7 +8,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
-
+    @category = Category.find_by_id(params[:id])
   end
 
   def index
