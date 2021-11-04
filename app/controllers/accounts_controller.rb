@@ -6,10 +6,11 @@ class AccountsController < ApplicationController
 
   def create
     @account = Account.create(account_params)
+    redirect_to account_path(@account)
   end
 
   def show
-
+    @account = Account.find_by_id(params[:id])
   end
 
   def index
