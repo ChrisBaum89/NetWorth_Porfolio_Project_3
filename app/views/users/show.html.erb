@@ -1,12 +1,16 @@
 <h1><%= @user.username %></h1>
 
+<h3>Net Worth: $<%= (@net_worth)%></h3>
+
 <!---need to be able to display categories and accounts under each category--->
 
 <% @categories.each do |category| %>
   <h3><%= category.name %> ($<%=category.dollar_value%>)</h3>
+
   <% @user.accounts.each do |account| %>
     <% if account.category_id == category.id %>
       <p><%= account.name %> => $<%= account.dollar_value %></p>
     <% end %>
   <% end %>
+
 <% end %>
