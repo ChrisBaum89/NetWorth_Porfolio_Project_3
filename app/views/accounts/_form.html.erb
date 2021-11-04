@@ -11,6 +11,8 @@
   <br>Value ($):<br>
   <%= f.text_field :dollar_value %><br><br>
 
+  <%=f.hidden_field :user_id, @user.id%>
+
 
   <%= f.submit %>
 <% end %>
