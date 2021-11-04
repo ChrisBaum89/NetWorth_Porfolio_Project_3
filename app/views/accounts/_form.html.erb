@@ -1,0 +1,12 @@
+<%= form_for(@account) do |f| %>
+  <br>Account Name:<br>
+  <%= f.text_field :name %><br><br>
+
+  <br>Type:<br>
+  <%= f.text_field :account_type %><br><br>
+
+  <br>Value($):<br>
+  <%= f.text_field :dollar_value %><br><br>
+
+  <%= f.submit %>
+<% end %>
