@@ -3,9 +3,9 @@
   <%= f.text_field :name %><br><br>
 
   <br>Type:<br>
-  <%= f.text_field :account_type %><br><br>
+  <%= f.select :account_type, ["Asset", "Debt"] %><br><br>
 
-  <br>Value($):<br>
+  <br>Value ($):<br>
   <%= f.text_field :dollar_value %><br><br>
 
   <%= f.submit %>
