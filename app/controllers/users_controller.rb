@@ -11,6 +11,8 @@ class UsersController < ApplicationController
   def show
     @user = User.find_by_id(params[:id])
     @categories = @user.categories.uniq
+    @accounts = @user.accounts
+    @net_worth = @user.net_worth_calc
   end
 
   def edit
@@ -20,4 +22,5 @@ class UsersController < ApplicationController
   def update
 
   end
+
 end
