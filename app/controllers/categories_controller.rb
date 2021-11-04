@@ -1,6 +1,6 @@
 class CategoriesController < ApplicationController
   def new
-
+    @category = Category.new
   end
 
   def create
@@ -16,7 +16,7 @@ class CategoriesController < ApplicationController
   end
 
   def edit
-
+    @category = Category.find_by_id(params[:id])
   end
 
   def update
