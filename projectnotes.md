@@ -10,6 +10,7 @@ User
   username
   email
   password_digest
+  net_worth
   timestamps
 
 	has many accounts
@@ -17,6 +18,8 @@ User
 
 Category (Investments, House, Crypto, Credit Card <= predefined by admin)
   name
+  dollar_value
+  users
 
  	has many accounts
 	has many users through accounts
@@ -24,7 +27,7 @@ Category (Investments, House, Crypto, Credit Card <= predefined by admin)
 Account
   Name
   Type (Asset or Liability)
-  Value ($ amount)
+  dollar_value
   user_id
   category_id
 
