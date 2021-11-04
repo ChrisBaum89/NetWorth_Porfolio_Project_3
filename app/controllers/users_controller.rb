@@ -9,7 +9,8 @@ class UsersController < ApplicationController
   end
 
   def show
-
+    @user = User.find_by_id(params[:id])
+    @categories = @user.categories.uniq
   end
 
   def edit
