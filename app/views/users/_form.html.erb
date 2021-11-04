@@ -1,0 +1,12 @@
+<%= form_for(@user) do |f| %>
+  <br>Username:<br>
+  <%= f.text_field :username %><br><br>
+
+  Email:<br>
+  <%= f.text_field :email %><br><br>
+
+  Password<br>
+  <%= f.text_field :password_digest %><br><br>
+
+  <%= f.submit %>
+<% end %>
