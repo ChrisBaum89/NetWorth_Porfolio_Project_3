@@ -21,7 +21,8 @@ DATA = {
     ["Real Estate", 0, 0],
     ["Crypto", 0, 0],
     ["Credit Cards", 0, 0],
-    ["Retirement", 0, 0]
+    ["Retirement", 0, 0],
+    ["Loans", 0, 0]
   ],
   :account_keys =>
     ["name", "account_type", "dollar_value", "user_id", "category_id"],
