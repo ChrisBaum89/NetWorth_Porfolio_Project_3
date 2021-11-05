@@ -13,9 +13,15 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by_id(params[:id])
-    @categories = @user.categories.uniq
-    @accounts = @user.accounts
-    @net_worth = @user.net_worth_calc
+
+    #prevent users from being able to see other users
+    if @user.id == current_user.id
+      @categories = @user.categories.uniq
+      @accounts = @user.accounts
+      @net_worth = @user.net_worth_calc
+    else
+      redirect_to user_path(current_user)
+    end
   end
 
   def edit
