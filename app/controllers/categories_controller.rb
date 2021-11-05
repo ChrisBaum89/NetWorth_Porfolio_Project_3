@@ -4,7 +4,8 @@ class CategoriesController < ApplicationController
   end
 
   def create
-
+    category = Category.new(category_params)
+    redirect_to category_path(category.id)
   end
 
   def show
@@ -26,7 +27,7 @@ class CategoriesController < ApplicationController
   end
 
   def category_params
-    params.require(:category).permit(:name, :dollar_value)
+    params.require(:category).permit(:name, :dollar_value, :number_of_users)
   end
 
 end
