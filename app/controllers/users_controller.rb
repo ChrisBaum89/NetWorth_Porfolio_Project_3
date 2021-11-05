@@ -5,6 +5,9 @@ class UsersController < ApplicationController
   end
 
   def create
+    @user = User.create(user_params)
+    binding.pry
+    redirect_to user_path(@user)
 
   end
 
@@ -21,6 +24,10 @@ class UsersController < ApplicationController
 
   def update
 
+  end
+
+  def user_params
+    params.require(:user).permit(:username, :email, :net_worth, :password, :password_confirmation)
   end
 
 end
