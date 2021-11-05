@@ -8,12 +8,12 @@
 
 DATA = {
   :user_keys =>
-    ["username", "email", "password_digest", "net_worth"],
+    ["username", "email", "password", "password_confirmation", "net_worth"],
   :users => [
-    ["Max Charles", "mc@email.com", "password", 0],
-    ["Skai Jackson", "sj@email.com" "password", 0],
-    ["Kaleo Elam", "ke@email.com", "password", 0],
-    ["Hayden Byerly", "hb@email.com", "password", 0]
+    ["Max Charles", "mc@email.com", "password", "password", 0],
+    ["Skai Jackson", "sj@email.com" "password", "password", 0],
+    ["Kaleo Elam", "ke@email.com", "password", "password", 0],
+    ["Hayden Byerly", "hb@email.com", "password", "password", 0]
   ],
   :category_keys =>
    ["name", "dollar_value", "number_of_users"],
