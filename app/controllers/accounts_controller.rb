@@ -7,11 +7,16 @@ class AccountsController < ApplicationController
 
   def create
     @account = Account.create(account_params)
+    if @account.account_type == "Debt" and @account.dollar_value > 0
+      @account.dollar_value = 0 - @account.dollar_value
+      @account.save
+    end
     redirect_to account_path(@account)
   end
 
   def show
     @account = Account.find_by_id(params[:id])
+    @category = Category.find_by_id(@account.category_id)
   end
 
   def index
