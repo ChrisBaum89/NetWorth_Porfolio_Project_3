@@ -9,7 +9,7 @@
   <%= f.collection_select :category_id, Category.order(:name),:id,:name, include_blank: false %><br><br>
 
   <br>Value ($):<br>
-  <%= f.text_field :dollar_value %><br><br>
+  <%= f.number_field :dollar_value %><br><br>
 
 
   <%=f.hidden_field :user_id, value: @user.id%>
