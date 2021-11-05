@@ -13,7 +13,6 @@ class SessionsController < ApplicationController
       end
       session[:user_id] = @user.id
       session[:username] = @user.username
-      binding.pry
       redirect_to user_path(@user)
     else
       redirect_to signin_path
@@ -21,6 +20,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    session.delete :name
+    session.clear
+    redirect_to signin_path
   end
 end
