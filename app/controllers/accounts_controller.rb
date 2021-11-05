@@ -1,6 +1,7 @@
 class AccountsController < ApplicationController
   def new
     @account = Account.new
+    @user = current_user
 
   end
 
@@ -26,6 +27,6 @@ class AccountsController < ApplicationController
   end
 
   def account_params
-    params.require(:account).permit(:name, :account_type, :dollar_value)
+    params.require(:account).permit(:name, :account_type, :dollar_value, :user_id, :category_id)
   end
 end
