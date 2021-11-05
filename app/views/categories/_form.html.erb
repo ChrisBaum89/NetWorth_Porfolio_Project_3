@@ -1,6 +1,7 @@
 <%= form_for(@category) do |f| %>
   <br>Category Name:<br>
   <%= f.text_field :name %><br><br>
+  <%=f.hidden_field :dollar_value, value: 0%>
 
   <%= f.submit %>
 <% end %>
