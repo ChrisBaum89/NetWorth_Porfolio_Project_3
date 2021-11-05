@@ -5,7 +5,7 @@
   <ul>
     <li>Asset or Debt?: <%=@account.account_type%>
     <li>Category: <%=@category.name%>
-    <li>Value: $<%=@account.dollar_value%>
+    <li>Value: $<%=number_with_delimiter(@account.dollar_value, :delimiter => ',')%>
     <li>Last Updated: <%=@account.updated_at%>
   </ul>
 </h4>

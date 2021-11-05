@@ -2,12 +2,12 @@
 
 <%= link_to "Categories", categories_path %><br><br>
 
-Total Number of Users: <%= @number_of_users %><br><br>
+Total Number of Users: <%= number_with_delimiter(@number_of_users, :delimiter => ',') %><br><br>
 
-Total Net Worth: $<%= @total_net_worth %><br><br>
+Total Net Worth: $<%= number_with_delimiter(@total_net_worth, :delimiter => ',') %><br><br>
 
-Average Net Worth: $<%= @average_net_worth%><br><br>
+Average Net Worth: $<%= number_with_delimiter(@average_net_worth, :delimiter => ',')%><br><br>
 
-Total Debt: $<%= @total_debt %><br><br>
+Total Debt: $<%= number_with_delimiter(@total_debt, :delimiter => ',') %><br><br>
 
-Average Debt: $<%= @average_debt %>
+Average Debt: $<%= number_with_delimiter(@average_debt, :delimiter => ',') %>
