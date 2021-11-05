@@ -20,7 +20,9 @@ class CategoriesController < ApplicationController
   end
 
   def update
-
+    category = Category.find_by_id(params[:id])
+    category.update(category_params)
+    redirect_to category_path(category)
   end
 
 end
