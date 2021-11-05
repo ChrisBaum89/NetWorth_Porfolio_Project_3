@@ -27,18 +27,18 @@ DATA = {
   :account_keys =>
     ["name", "account_type", "dollar_value", "user_id", "category_id"],
   :accounts => [
-    ["MC Primary Residence", "asset", 250000, 1, 1],
-    ["MC Rental Property 1", "asset", 150000, 1, 1],
-    ["MC Rental Property 2", "asset", 180000, 1, 1],
-    ["SJ Primary Residence", "asset", 500000, 2, 1],
-    ["SJ Vacation Home", "asset", 305000, 2, 1],
-    ["MC Ether", "asset", 10000, 1, 2],
-    ["MC Bitcoin", "asset", 15000, 1, 2],
-    ["SJ Algo", "asset", 5000, 2, 2],
-    ["MC Mastercard", "debt", 2000, 1, 3],
-    ["MC Visa", "debt", 2000, 1, 3],
-    ["SJ Mastercard", "debt", 3000, 2, 3],
-    ["KE Visa", "debt", 1000, 3, 3]
+    ["MC Primary Residence", "Asset", 250000, 1, 1],
+    ["MC Rental Property 1", "Asset", 150000, 1, 1],
+    ["MC Rental Property 2", "Asset", 180000, 1, 1],
+    ["SJ Primary Residence", "Asset", 500000, 2, 1],
+    ["SJ Vacation Home", "Asset", 305000, 2, 1],
+    ["MC Ether", "Asset", 10000, 1, 2],
+    ["MC Bitcoin", "Asset", 15000, 1, 2],
+    ["SJ Algo", "Asset", 5000, 2, 2],
+    ["MC Mastercard", "Debt", -2000, 1, 3],
+    ["MC Visa", "Debt", -2000, 1, 3],
+    ["SJ Mastercard", "Debt", -3000, 2, 3],
+    ["KE Visa", "Debt", -1000, 3, 3]
   ]
 }
 
