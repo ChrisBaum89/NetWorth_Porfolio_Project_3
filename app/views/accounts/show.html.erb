@@ -1,1 +1,11 @@
-accounts show page
+<h1>Account Information</h1>
+
+<h2><%=@account.name%></h2>
+<h4>
+  <ul>
+    <li>Asset or Debt?: <%=@account.account_type%>
+    <li>Category: <%=@category.name%>
+    <li>Value: $<%=@account.dollar_value%>
+    <li>Last Updated: <%=@account.updated_at%>
+  </ul>
+</h4>
