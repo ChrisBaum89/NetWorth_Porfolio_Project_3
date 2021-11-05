@@ -4,8 +4,8 @@ class CategoriesController < ApplicationController
   end
 
   def create
-    category = Category.new(category_params)
-    redirect_to category_path(category.id)
+    category = Category.create(category_params)
+    redirect_to category_path(category)
   end
 
   def show
