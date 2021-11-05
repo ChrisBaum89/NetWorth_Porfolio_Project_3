@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   post '/signin' => 'sessions#create'
   post '/signout' => 'sessions#destroy'
 
+  get '/admin/home' => 'admin#home'
+
   resources :categories, only: [:new, :create, :show, :index, :edit, :update]
   resources :accounts, only: [:new, :create, :show, :index, :edit, :update]
   resources :users, only: [:new, :create, :show, :edit, :update]
