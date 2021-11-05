@@ -1,4 +1,6 @@
 <h1><%=@category.name%></h1>
 <%=link_to "Edit Category", edit_category_path(@category) %><br><br>
 
-Total Net Worth (for all users)
+Total Category Value: $<%=@category_value %><br><br>
+
+Number of Users: <%=@category_users%>
