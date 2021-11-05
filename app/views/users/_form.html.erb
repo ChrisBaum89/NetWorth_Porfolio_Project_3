@@ -6,7 +6,12 @@
   <%= f.text_field :email %><br><br>
 
   Password<br>
-  <%= f.text_field :password_digest %><br><br>
+  <%= f.password_field :password %><br><br>
+
+  Password Confirmation:<br>
+  <%= f.password_field :password_confirmation %><br><br>
+
+  <%=f.hidden_field :net_worth, value: 0 %>
 
   <%= f.submit %>
 <% end %>
