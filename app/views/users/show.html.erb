@@ -9,7 +9,7 @@
 
   <% @user.accounts.each do |account| %>
     <% if account.category_id == category.id %>
-      <p><%= account.name %> => $<%= account.dollar_value %></p>
+      <p><%= link_to account.name, account_path(account) %> => $<%= account.dollar_value %></p>
     <% end %>
   <% end %>
 
