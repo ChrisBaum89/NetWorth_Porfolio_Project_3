@@ -1,4 +1,6 @@
 class CategoriesController < ApplicationController
+  include CategoriesHelper
+
   def new
     @category = Category.new
   end
