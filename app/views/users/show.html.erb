@@ -12,3 +12,7 @@
     <% end %>
   <% end %>
 <% end %>
+
+<% if @admin %>
+  <%= link_to "Delete User", @user, method: :delete, data: {confirm: "Are you sure you want to delete the user?"} %>
+<% end %>
