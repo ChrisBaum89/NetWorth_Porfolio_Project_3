@@ -7,8 +7,8 @@ Rails.application.routes.draw do
 
   get '/admin/home' => 'admin#home'
 
-  resources :categories, only: [:new, :create, :show, :index, :edit, :update]
-  resources :accounts, only: [:new, :create, :show, :index, :edit, :update]
-  resources :users, only: [:new, :create, :index, :show, :edit, :update]
+  resources :categories, only: [:new, :create, :show, :index, :edit, :update, :destroy]
+  resources :accounts, only: [:new, :create, :show, :index, :edit, :update, :destroy]
+  resources :users, only: [:new, :create, :index, :show, :edit, :update, :destroy]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
