@@ -17,6 +17,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by_id(params[:id])
+    @admin = admin?
     #prevent users from being able to see other users
     if (current_user.id == @user.id) || admin?
       @categories = @user.categories.uniq
@@ -33,6 +34,15 @@ class UsersController < ApplicationController
 
   def update
 
+  end
+
+  def destroy
+    if admin?
+      user = User.find_by_id(params[:id])
+      user.accounts.destroy_all
+      user.destroy
+      redirect_to users_path
+    end
   end
 
   def user_params
