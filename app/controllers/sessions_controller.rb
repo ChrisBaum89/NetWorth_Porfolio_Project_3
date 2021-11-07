@@ -13,7 +13,11 @@ class SessionsController < ApplicationController
       end
       session[:user_id] = @user.id
       session[:username] = @user.username
-      redirect_to user_path(@user)
+      if admin?
+        redirect_to admin_home_path
+      else
+        redirect_to user_path(@user)
+      end
     else
       redirect_to signin_path
     end
