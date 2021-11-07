@@ -7,11 +7,17 @@ class UsersController < ApplicationController
 
   def create
     if params[:user][:password]
-      @user = User.create(user_params)
-      session[:user_id] = @user.id
-      redirect_to user_path(@user)
+      @user = User.new(user_params)
+      binding.pry
+      if @user.valid?
+        @user.save
+        session[:user_id] = @user.id
+        redirect_to user_path(@user)
+      else
+        redirect_to new_user_path
+      end
     else
-      redirct_to new_user_path
+      redirect_to new_user_path
     end
   end
 
