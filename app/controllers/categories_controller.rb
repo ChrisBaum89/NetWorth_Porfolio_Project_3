@@ -1,5 +1,6 @@
 class CategoriesController < ApplicationController
   include CategoriesHelper
+  before_action :logged_in_admin?
 
   def new
     @category = Category.new
