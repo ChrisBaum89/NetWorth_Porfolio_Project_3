@@ -19,6 +19,7 @@ DATA = {
   :category_keys =>
    ["name", "dollar_value", "number_of_users"],
   :categories => [
+    ["Uncategorized", 0, 0],
     ["Real Estate", 0, 0],
     ["Crypto", 0, 0],
     ["Credit Cards", 0, 0],
