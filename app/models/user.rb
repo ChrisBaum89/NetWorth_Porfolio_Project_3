@@ -4,6 +4,12 @@ class User < ApplicationRecord
   has_many :accounts
   has_many :categories, through: :accounts
 
+  validates :username, presence: true
+  validates :username, uniqueness: true
+  validates :email, presence: true
+  validates :email, uniqueness: true
+  validates :password, presence: true
+
   def net_worth_calc
     self.net_worth = 0
     self.accounts.each do |account|
