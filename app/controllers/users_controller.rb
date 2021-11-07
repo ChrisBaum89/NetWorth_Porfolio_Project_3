@@ -17,9 +17,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by_id(params[:id])
-
     #prevent users from being able to see other users
-    if @user.id == current_user.id
+    if (current_user.id == @user.id) || admin?
       @categories = @user.categories.uniq
       @accounts = @user.accounts
       @net_worth = @user.net_worth_calc
