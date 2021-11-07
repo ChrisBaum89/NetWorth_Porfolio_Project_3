@@ -7,8 +7,13 @@ class CategoriesController < ApplicationController
   end
 
   def create
-    category = Category.create(category_params)
-    redirect_to category_path(category)
+    category = Category.new(category_params)
+    if category.valid?
+      category.save
+      redirect_to category_path(category)
+    else
+      redirect_to new_category_path
+    end
   end
 
   def show
@@ -46,7 +51,7 @@ class CategoriesController < ApplicationController
         account.category_id = uncategorized
         account.save
       end
-      
+
       category.destroy
       redirect_to categories_path
     end
