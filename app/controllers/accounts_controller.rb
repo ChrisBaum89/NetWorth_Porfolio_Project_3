@@ -5,12 +5,16 @@ class AccountsController < ApplicationController
   end
 
   def create
-    account = Account.create(account_params)
-    if account.account_type == "Debt" and account.dollar_value > 0
-      account.dollar_value = 0 - account.dollar_value
+    account = Account.new(account_params)
+    if account.valid?
+      if account.account_type == "Debt" and account.dollar_value > 0
+        account.dollar_value = 0 - account.dollar_value
+      end
       account.save
+      redirect_to account_path(account)
+    else
+      redirect_to new_account_path
     end
-    redirect_to account_path(account)
   end
 
   def show
