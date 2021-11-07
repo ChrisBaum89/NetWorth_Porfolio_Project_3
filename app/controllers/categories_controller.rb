@@ -36,6 +36,14 @@ class CategoriesController < ApplicationController
     redirect_to category_path(category)
   end
 
+  def destroy
+    if admin?
+      category = Category.find_by_id(params[:id])
+      category.destroy
+      redirect_to categories_path
+    end
+  end
+
   def category_params
     params.require(:category).permit(:name, :dollar_value, :number_of_users)
   end
