@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :logged_in_admin?, only: [:index]
 
   def new
     @user = User.new
@@ -7,6 +8,11 @@ class UsersController < ApplicationController
   def create
     @user = User.create(user_params)
     redirect_to user_path(@user)
+  end
+
+  #for admins only
+  def index
+    @users = User.all
   end
 
   def show
