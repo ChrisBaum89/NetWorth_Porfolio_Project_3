@@ -6,10 +6,22 @@ class ApplicationController < ActionController::Base
   end
 
   def logged_in?
-    current_user != nil
+    session.include? :user_id
   end
 
   def admin?
     current_user.admin == true
+  end
+
+  def logged_in_admin?
+    if logged_in?
+      if admin?
+        true
+      else
+        return head(:forbidden)
+      end
+    else
+      return head(:forbidden)
+    end
   end
 end
