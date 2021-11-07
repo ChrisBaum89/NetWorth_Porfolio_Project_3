@@ -11,4 +11,13 @@ module CategoriesHelper
     end
     total_value
   end
+
+  def average_value(category)
+    if users_count(category) > 0
+      average_value = total_value(category) / users_count(category)
+    else
+      0
+    end
+  end
+
 end
