@@ -9,3 +9,5 @@
     <li>Last Updated: <%=@account.updated_at%>
   </ul>
 </h4>
+
+<%= link_to "Delete Account", @account, method: :delete, data: {confirm: "Are you sure you want to delete the account?"} %>
