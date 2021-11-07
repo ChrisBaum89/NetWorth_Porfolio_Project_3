@@ -6,8 +6,13 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.create(user_params)
-    redirect_to user_path(@user)
+    if params[:user][:password]
+      @user = User.create(user_params)
+      session[:user_id] = @user.id
+      redirect_to user_path(@user)
+    else
+      redirct_to new_user_path
+    end
   end
 
   #for admins only
