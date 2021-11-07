@@ -6,6 +6,7 @@
       <ul>
         <li>Number of Users: <%= number_with_delimiter(users_count(category)) %> </li>
         <li>Total Value: $<%= number_with_delimiter(total_value(category)) %> </li>
+        <li>Average Value Per User: $<%= number_with_delimiter(average_value(category))%> </li>
       </ul>
   <% end %>
 </ul>
