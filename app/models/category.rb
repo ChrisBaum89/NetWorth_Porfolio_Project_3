@@ -2,6 +2,9 @@ class Category < ApplicationRecord
   has_many :accounts
   has_many :users, through: :accounts
 
+  validates :name, presence: true
+  validates :name, uniqueness: true
+
   def user_category_value_calc(user)
     user_category_value = 0
     self.accounts.each do |account|
