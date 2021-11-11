@@ -1,1 +1,5 @@
-accounts index page
+<h1><%=@user.username%> Accounts </h1>
+
+<% @accounts.each do |account| %>
+  <%=link_to account.name, user_account_path(@user, account) %><br><br>
+<% end %>
