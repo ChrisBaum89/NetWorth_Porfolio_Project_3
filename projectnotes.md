@@ -36,3 +36,6 @@ Account
 
 
   ------------------------
+
+  Possible Blog Entries:
+  Why render :new doesn't display the user/new URL
