@@ -12,7 +12,7 @@
     <% if logged_in? %>
         <% if current_user.admin == false %>
           <%= link_to 'Home', user_path(session[:user_id]) %>
-          <%= link_to 'Add Account', new_account_path %>
+          <%= link_to 'Add Account', new_user_account_path %>
           <%= link_to "Log Out", signout_path, method:'post' %>
         <% else %>
           <%= link_to 'Home', admin_home_path %>
