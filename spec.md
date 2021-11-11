@@ -17,7 +17,8 @@ Specs:
 ## validations User (presence: username, email, password)(uniqueness: username, email)
 ## validations on Account (presence: name, dollar_value, account_type)
 ## validations on Category (presence: name)(uniqueness: name)
-- [ ] Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)
+- [x] Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)
+##created admin routes with a "home" route (.e.g. /admin/home)
 - [x] Include signup (how e.g. Devise)
 ## signup tested and working
 - [x] Include login (how e.g. Devise)
@@ -27,7 +28,8 @@ Specs:
 - [ ] Include third party signup/login (how e.g. Devise/OmniAuth)
 - [x] Include nested resource show or index (URL e.g. users/2/recipes)
 ##user_account (e.g. user/1/account/1)
-- [ ] Include nested resource "new" form (URL e.g. recipes/1/ingredients/new)
+- [x] Include nested resource "new" form (URL e.g. recipes/1/ingredients/new)
+##user_account_new (.e.g. user/1/account/new)
 - [ ] Include form display of validation errors (form URL e.g. /recipes/new)
 
 Confirm:
