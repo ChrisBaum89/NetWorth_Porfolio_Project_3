@@ -6,6 +6,7 @@ class SessionsController < ApplicationController
     if session[:id]
       redirect_to user_path(@user)
     elsif params[:username] != nil && params[:password]
+      binding.pry
       if @user = User.find_by(username: params[:username])
         return head(:forbidden) unless @user.authenticate(params[:password])
       else
@@ -26,5 +27,11 @@ class SessionsController < ApplicationController
   def destroy
     session.clear
     redirect_to signin_path
+  end
+
+  private
+
+  def auth
+    request.env['omniauth.auth']
   end
 end
