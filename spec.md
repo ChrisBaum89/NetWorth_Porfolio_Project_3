@@ -26,11 +26,13 @@ Specs:
 - [x] Include logout (how e.g. Devise)
 ## logout tested and working
 - [ ] Include third party signup/login (how e.g. Devise/OmniAuth)
+
 - [x] Include nested resource show or index (URL e.g. users/2/recipes)
 ##user_account (e.g. user/1/account/1)
 - [x] Include nested resource "new" form (URL e.g. recipes/1/ingredients/new)
 ##user_account_new (.e.g. user/1/account/new)
-- [ ] Include form display of validation errors (form URL e.g. /recipes/new)
+- [x] Include form display of validation errors (form URL e.g. /recipes/new)
+##validation errors display on forms for Categories, Users, and Accounts
 
 Confirm:
 - [ ] The application is pretty DRY
