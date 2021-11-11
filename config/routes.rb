@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get '/signup' => 'users#new'
   post '/signin' => 'sessions#create'
   post '/signout' => 'sessions#destroy'
+  get '/auth/facebook/callback' => 'sessions#create'
 
   get '/admin/home' => 'admin#home'
 
@@ -19,5 +20,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show] do
     resources :accounts, only: [:index, :show, :new]
   end
+
+
 
 end
