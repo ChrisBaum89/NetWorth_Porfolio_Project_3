@@ -23,7 +23,8 @@ class AccountsController < ApplicationController
   end
 
   def index
-
+    @user = User.find_by_id(params[:user_id])
+    @accounts = @user.accounts
   end
 
   def edit
