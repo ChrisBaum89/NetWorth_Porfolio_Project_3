@@ -18,6 +18,7 @@ class AccountsController < ApplicationController
   end
 
   def show
+    @user = User.find_by_id(params[:user_id])
     @account = Account.find_by_id(params[:id])
     @category = Category.find_by_id(@account.category_id)
   end
