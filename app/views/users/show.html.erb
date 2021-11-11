@@ -8,7 +8,7 @@
 
   <% @user.accounts.each do |account| %>
     <% if account.category_id == category.id %>
-      <p><%= link_to account.name, account_path(account) %> => $<%= number_with_delimiter(account.dollar_value) %></p>
+      <p><%= link_to account.name, user_account_path(@user, account) %> => $<%= number_with_delimiter(account.dollar_value) %></p>
     <% end %>
   <% end %>
 <% end %>
