@@ -10,10 +10,15 @@ Rails.application.routes.draw do
   resources :categories, only: [:new, :create, :index, :show, :edit, :update, :destroy]
 
   resources :categories, only: [:index] do
-    resources :users, only:[:index]
+    resources :users, only: [:index]
   end
 
   resources :accounts, only: [:new, :create, :show, :index, :edit, :update, :destroy]
+
+  resource :users, only: [show] do
+    resources :accounts, only: [:index]
+  end
+
   resources :users, only: [:new, :create, :index, :show, :edit, :update, :destroy]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
