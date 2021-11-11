@@ -7,12 +7,12 @@ class CategoriesController < ApplicationController
   end
 
   def create
-    category = Category.new(category_params)
-    if category.valid?
-      category.save
-      redirect_to category_path(category)
+    @category = Category.new(category_params)
+    if @category.valid?
+      @category.save
+      redirect_to category_path(@category)
     else
-      redirect_to new_category_path
+      render :new
     end
   end
 
