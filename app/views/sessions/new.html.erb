@@ -7,5 +7,7 @@
   Password:
   <%= f.password_field(:password) %><br><br>
 
-  <%= f.submit "Sign In" %>
+  <%= f.submit "Sign In" %><br><br>
+
+  <%= link_to('Sign in with Facebook!', '/auth/facebook', method: :post) %>
 <% end %>
