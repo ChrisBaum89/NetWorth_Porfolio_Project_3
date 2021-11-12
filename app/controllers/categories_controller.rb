@@ -20,10 +20,7 @@ class CategoriesController < ApplicationController
     @category = Category.find_by_id(params[:id])
 
     #calculate net worth of the category
-    @category_value = 0
-    @category.accounts.each do |account|
-      @category_value = @category_value + account.dollar_value
-    end
+    @category_value = category_total_value(@category)
     @category_users = @category.users.uniq.count
   end
 
@@ -59,6 +56,14 @@ class CategoriesController < ApplicationController
 
   def category_params
     params.require(:category).permit(:name, :dollar_value, :number_of_users)
+  end
+
+  def category_total_value(category)
+    category_value = 0
+    category.accounts.each do |account|
+      category_value = category_value + account.dollar_value
+    end
+    category_value
   end
 
 end
