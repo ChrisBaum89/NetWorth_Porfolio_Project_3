@@ -12,7 +12,6 @@ class AccountsController < ApplicationController
     if @account.valid?
       debt_value_check(@account)
       @account.save
-      binding.pry
       redirect_to account_path(@account)
     else
       render :new
