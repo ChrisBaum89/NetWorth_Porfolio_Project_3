@@ -1,8 +1,11 @@
 class SessionsController < ApplicationController
+
+  #new route
   def new
     @user = User.new
   end
 
+  #create route
   def create
     @user = User.new
 
@@ -51,6 +54,7 @@ class SessionsController < ApplicationController
     end
   end
 
+  #destroy route
   def destroy
     session.clear
     redirect_to signin_path
@@ -58,10 +62,12 @@ class SessionsController < ApplicationController
 
   private
 
+  #gets omniauth user information
   def auth
     request.env['omniauth.auth']
   end
 
+  #new omniauth user and assigns new User parameters
   def omniauth_new_user
     @user = User.new
     @user.username = auth[:info][:name]
