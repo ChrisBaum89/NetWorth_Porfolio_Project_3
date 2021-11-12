@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  helper_method :update_net_worth
 
   #new route
   def new
@@ -21,6 +22,7 @@ class SessionsController < ApplicationController
       if @user && @user.authenticate(params[:password])
         session[:user_id] = @user.id
         session[:username] = @user.username
+        update_net_worth(@user)
 
         #verify if user is an admin and redirect accordingly
         if admin?
