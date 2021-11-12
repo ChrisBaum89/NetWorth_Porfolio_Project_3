@@ -41,11 +41,6 @@ class UsersController < ApplicationController
     end
   end
 
-  #edit route
-  def edit
-    @user = User.find_by_id(params[:id])
-  end
-
   #destroy route
   def destroy
     if admin?
