@@ -60,7 +60,7 @@ class CategoriesController < ApplicationController
     end
   end
 
-  #used for mass assignment for new Category objects
+  #used for mass assignment for new object from new/edit form information
   def category_params
     params.require(:category).permit(:name, :dollar_value, :number_of_users)
   end

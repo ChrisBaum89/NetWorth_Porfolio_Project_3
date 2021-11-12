@@ -52,7 +52,7 @@ class AccountsController < ApplicationController
     redirect_to user_path(user)
   end
 
-  #used for mass assignment for new object
+  #used for mass assignment for new object from new/edit form information
   def account_params
     params.require(:account).permit(:name, :account_type, :dollar_value, :user_id, :category_id)
   end

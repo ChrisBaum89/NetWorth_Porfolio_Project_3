@@ -1,10 +1,12 @@
 class UsersController < ApplicationController
   before_action :logged_in_admin?, only: [:index]
 
+  #new route
   def new
     @user = User.new
   end
 
+  #create route
   def create
     if params[:user][:password]
       @user = User.new(user_params)
@@ -20,11 +22,12 @@ class UsersController < ApplicationController
     end
   end
 
-  #for admins only
+  #index route (admins only)
   def index
     @users = User.all
   end
 
+  #show route
   def show
     @user = User.find_by_id(params[:id])
     @admin = admin?
@@ -38,14 +41,17 @@ class UsersController < ApplicationController
     end
   end
 
+  #edit route
   def edit
     @user = User.find_by_id(params[:id])
   end
 
+  #update route
   def update
 
   end
 
+  #destroy route
   def destroy
     if admin?
       user = User.find_by_id(params[:id])
@@ -55,6 +61,7 @@ class UsersController < ApplicationController
     end
   end
 
+  #used for mass assignment for new object from new/edit form information
   def user_params
     params.require(:user).permit(:username, :email, :net_worth, :password, :password_confirmation, :admin)
   end
