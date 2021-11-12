@@ -8,9 +8,7 @@ class AccountsController < ApplicationController
     @user = current_user
     account = Account.new(account_params)
     if account.valid?
-      if account.account_type == "Debt" and account.dollar_value > 0
-        account.dollar_value = 0 - account.dollar_value
-      end
+      debt_value_check(account)
       account.save
       redirect_to account_path(account)
     else
@@ -50,5 +48,11 @@ class AccountsController < ApplicationController
 
   def account_params
     params.require(:account).permit(:name, :account_type, :dollar_value, :user_id, :category_id)
+  end
+
+  def debt_value_check(account)
+    if account.account_type == "Debt" and account.dollar_value > 0
+      account.dollar_value = 0 - account.dollar_value
+    end
   end
 end
