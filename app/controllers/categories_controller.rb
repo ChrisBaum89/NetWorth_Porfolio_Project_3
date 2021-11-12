@@ -23,9 +23,6 @@ class CategoriesController < ApplicationController
   #show route
   def show
     @category = Category.find_by_id(params[:id])
-
-    #calculate number of users for each category
-    @category_users = @category.users.uniq.count
   end
 
   #index route
