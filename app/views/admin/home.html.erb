@@ -6,10 +6,10 @@
 
 Total Number of Users: <%= number_with_delimiter(@number_of_users, :delimiter => ',') %><br><br>
 
-Total Net Worth: $<%= number_with_delimiter(@total_net_worth, :delimiter => ',') %><br><br>
+Total Net Worth: $<%= number_with_delimiter(all_users_net_worth, :delimiter => ',') %><br><br>
 
-Average Net Worth: $<%= number_with_delimiter(@average_net_worth, :delimiter => ',')%><br><br>
+Average Net Worth: $<%= number_with_delimiter(all_users_average_net_worth, :delimiter => ',')%><br><br>
 
-Total Debt: $<%= number_with_delimiter(@total_debt, :delimiter => ',') %><br><br>
+Total Debt: $<%= number_with_delimiter(all_users_debt, :delimiter => ',') %><br><br>
 
-Average Debt: $<%= number_with_delimiter(@average_debt, :delimiter => ',') %>
+Average Debt: $<%= number_with_delimiter(all_users_average_debt, :delimiter => ',') %>
