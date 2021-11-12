@@ -4,6 +4,7 @@ module CategoriesHelper
     category.users.uniq.count
   end
 
+  #calculates total value of a category
   def total_value(category)
     total_value = 0
     category.accounts.uniq.each do |account|
