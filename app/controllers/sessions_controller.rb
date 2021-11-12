@@ -10,40 +10,43 @@ class SessionsController < ApplicationController
     if session[:id]
       redirect_to user_path(@user)
 
-    #if received username
+    #if received standard login credentials (non-omniauth)
     elsif auth == nil
       @user = User.find_by(username: params[:username])
 
-      #v
+      #verify user is found and password is authenticated
       if @user && @user.authenticate(params[:password])
         session[:user_id] = @user.id
         session[:username] = @user.username
 
-
+        #verify if user is an admin and redirect accordingly
         if admin?
           redirect_to admin_home_path
         else
           redirect_to user_path(@user)
         end
       else
+        #if not correct login, redirect back to signin_path
         redirect_to signin_path
       end
 
     #login using Omniauth (facebook)
     elsif auth
+      #if omniauth User found
       if @user = User.find_by(uid: auth[:uid].to_i)
-        #@user.username = auth[:info][:name]
-        #@user.email = auth[:info][:email]
+        session[:user_id] = @user.id
         redirect_to user_path(@user)
+      #if omniauth User not found, create User
       else
         omniauth_new_user
+        #if omniauth user saves successfully
         if @user.save
+          session[:user_id] = @user.id
           redirect_to user_path(@user)
         else
-          render :new
+          redirect_to signin_path
         end
       end
-      session[:user_id] = @user.id
     else
     end
   end
