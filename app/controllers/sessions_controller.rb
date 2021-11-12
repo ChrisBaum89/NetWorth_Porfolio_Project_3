@@ -32,8 +32,8 @@ class SessionsController < ApplicationController
     #login using Omniauth (facebook)
     elsif auth
       if @user = User.find_by(uid: auth[:uid].to_i)
-        @user.username = auth[:info][:name]
-        @user.email = auth[:info][:email]
+        #@user.username = auth[:info][:name]
+        #@user.email = auth[:info][:email]
         redirect_to user_path(@user)
       else
         omniauth_new_user
