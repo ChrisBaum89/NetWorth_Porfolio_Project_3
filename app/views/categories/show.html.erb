@@ -1,6 +1,6 @@
 <h1><%=@category.name%></h1>
 
-Total Category Value: $<%=@category_value %><br><br>
+Total Category Value: $<%=number_with_delimiter(total_value(@category), :delimiter => ',') %><br><br>
 
 Number of Users: <%=@category_users%><br><br><br>
 
