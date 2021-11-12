@@ -35,7 +35,6 @@ class UsersController < ApplicationController
     if (current_user.id == @user.id) || admin?
       @categories = @user.categories.uniq
       @accounts = @user.accounts
-      @net_worth = @user.net_worth_calc
     else
       redirect_to user_path(current_user)
     end
