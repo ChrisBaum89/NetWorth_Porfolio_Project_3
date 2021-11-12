@@ -14,7 +14,7 @@ DATA = {
     ["Skai Jackson", "sj@email.com" "password", "password", 0, false, 0],
     ["Kaleo Elam", "ke@email.com", "password", "password", 0, false, 0],
     ["Hayden Byerly", "hb@email.com", "password", "password", 0, false, 0],
-    ["Chris Baum", "cb@email.com", "password", "password", 0, true, 0],
+    ["CB", "cb@email.com", "password", "password", 0, true, 0],
     ["Face Book", "fb@email.com", "password", "password", 0, true, 123456789]
   ],
   :category_keys =>
