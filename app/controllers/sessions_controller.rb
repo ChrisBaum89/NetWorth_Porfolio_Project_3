@@ -11,15 +11,9 @@ class SessionsController < ApplicationController
       redirect_to user_path(@user)
 
     elsif params[:username] != nil && params[:password] != nil && auth == nil
-      if @user = User.find_by(username: params[:username])
-        user_found = true
-      end
+      @user = User.find_by(username: params[:username])
 
-      if @user.authenticate(params[:password])
-        password_authenticated = true
-      end
-
-      if user_found == true && password_authenticated == true
+      if @user && @user.authenticate(params[:password])
         session[:user_id] = @user.id
         session[:username] = @user.username
         if admin?
@@ -66,7 +60,8 @@ class SessionsController < ApplicationController
     @user.username = auth[:info][:name]
     @user.email = auth[:info][:email]
     @user.uid = auth[:uid]
-    #assign random password for omniauth user
+
+    #assign random password for omniauth
     @user.password = SecureRandom.urlsafe_base64
     @user.password_confirmation = @user.password
   end
