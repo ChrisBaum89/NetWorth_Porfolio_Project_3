@@ -6,13 +6,12 @@ class AccountsController < ApplicationController
 
   def create
     @user = current_user
-    account = Account.new(account_params)
-    if account.valid?
-      debt_value_check(account)
-      account.save
+    @account = Account.new(account_params)
+    if @account.valid?
+      debt_value_check(@account)
+      @account.save
       redirect_to account_path(account)
     else
-      @account = account
       render :new
     end
   end
