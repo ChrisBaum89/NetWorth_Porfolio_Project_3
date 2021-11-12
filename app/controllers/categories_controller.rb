@@ -43,12 +43,7 @@ class CategoriesController < ApplicationController
       category = Category.find_by_id(params[:id])
 
       #need to re-assign all accounts within this category to unassigned category_id
-      uncategorized = Category.find_by(:name ["Uncategorized"])
-      category.accounts.each do |account|
-        account.category_id = uncategorized
-        account.save
-      end
-
+      assign_to_uncategorized
       category.destroy
       redirect_to categories_path
     end
@@ -64,6 +59,14 @@ class CategoriesController < ApplicationController
       category_value = category_value + account.dollar_value
     end
     category_value
+  end
+
+  def assign_to_uncategorized
+    uncategorized = Category.find_by(:name ["Uncategorized"])
+    category.accounts.each do |account|
+      account.category_id = uncategorized
+      account.save
+    end
   end
 
 end
