@@ -10,12 +10,16 @@ class SessionsController < ApplicationController
     if session[:id]
       redirect_to user_path(@user)
 
-    elsif params[:username] != nil && params[:password] != nil && auth == nil
+    #if received username
+    elsif auth == nil
       @user = User.find_by(username: params[:username])
 
+      #v
       if @user && @user.authenticate(params[:password])
         session[:user_id] = @user.id
         session[:username] = @user.username
+
+
         if admin?
           redirect_to admin_home_path
         else
