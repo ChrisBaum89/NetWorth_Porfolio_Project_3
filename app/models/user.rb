@@ -8,7 +8,6 @@ class User < ApplicationRecord
   validates :username, uniqueness: true
   validates :email, presence: true
   validates :email, uniqueness: true
-  validates :password, presence: true
 
   def net_worth_calc
     self.net_worth = 0
