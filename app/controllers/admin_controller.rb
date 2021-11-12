@@ -4,15 +4,10 @@ class AdminController < ApplicationController
   #home route
   def home
     @number_of_users = User.count
-
     all_users_net_worth
-
     all_users_average_net_worth
-
     all_users_debt
-
     all_users_average_debt
-
   end
 
   #calculate net worth for all users
