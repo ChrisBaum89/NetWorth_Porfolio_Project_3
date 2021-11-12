@@ -11,6 +11,7 @@ class AccountsController < ApplicationController
     @account = Account.new(account_params)
     if @account.valid?
       debt_value_check(@account)
+      update_net_worth
       @account.save
       redirect_to account_path(@account)
     else
@@ -64,4 +65,5 @@ class AccountsController < ApplicationController
       account.dollar_value = 0 - account.dollar_value
     end
   end
+
 end
