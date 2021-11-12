@@ -25,8 +25,8 @@ Specs:
 ## login tested and working
 - [x] Include logout (how e.g. Devise)
 ## logout tested and working
-- [ ] Include third party signup/login (how e.g. Devise/OmniAuth)
-
+- [x] Include third party signup/login (how e.g. Devise/OmniAuth)
+## Omniauth is working correctly with facebook. Able to create new user when logging in and also retrieve user.
 - [x] Include nested resource show or index (URL e.g. users/2/recipes)
 ##user_account (e.g. user/1/account/1)
 - [x] Include nested resource "new" form (URL e.g. recipes/1/ingredients/new)
