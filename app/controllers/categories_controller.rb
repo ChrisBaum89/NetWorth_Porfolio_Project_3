@@ -24,9 +24,6 @@ class CategoriesController < ApplicationController
   def show
     @category = Category.find_by_id(params[:id])
 
-    #calculate net worth of the category
-    @category_value = category_total_value(@category)
-
     #calculate number of users for each category
     @category_users = @category.users.uniq.count
   end
@@ -65,14 +62,7 @@ class CategoriesController < ApplicationController
     params.require(:category).permit(:name, :dollar_value, :number_of_users)
   end
 
-  #calculates total value of a category
-  def category_total_value(category)
-    category_value = 0
-    category.accounts.each do |account|
-      category_value = category_value + account.dollar_value
-    end
-    category_value
-  end
+
 
   #When admin deletes a category, all accounts associated with that category are
   #assigned to "Uncategorized" category. This is to prevent users accounts from
