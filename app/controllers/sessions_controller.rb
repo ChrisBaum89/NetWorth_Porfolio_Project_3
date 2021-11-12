@@ -19,13 +19,20 @@ class SessionsController < ApplicationController
         redirect_to user_path(@user)
       end
     elsif auth['uid']
-      binding.pry
-      if @user = User.find_by(username: auth[:info][:name])
-        session[:user_id] = @user.id
+      if @user = User.find_by(uid: auth[:uid].to_i)
+        @user.username = auth[:info][:name]
+        @user.email = auth[:info][:email]
       else
-        binding.pry
-        @user = User.new(auth[:info][:name], auth[:info][:email], 0)
+        @user = User.new
+        @user.username = auth[:info][:name]
+        @user.email = auth[:info][:email]
+        @user.uid = auth[:uid]
+        @user.password = SecureRandom.urlsafe_base64
+        @user.password_confirmation = @user.password
+        @user.save
       end
+      session[:user_id] = @user.id
+      redirect_to user_path(@user)
     else
       redirect_to signin_path
     end
@@ -41,4 +48,5 @@ class SessionsController < ApplicationController
   def auth
     request.env['omniauth.auth']
   end
+
 end
