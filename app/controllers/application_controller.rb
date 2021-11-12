@@ -29,4 +29,9 @@ class ApplicationController < ActionController::Base
       return head(:forbidden)
     end
   end
+
+  def update_net_worth(user)
+    user.net_worth = user.accounts.sum('dollar_value')
+    user.save
+  end
 end
