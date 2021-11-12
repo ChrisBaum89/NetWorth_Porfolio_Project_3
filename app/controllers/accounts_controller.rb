@@ -1,7 +1,7 @@
 class AccountsController < ApplicationController
   def new
-    @account = Account.new
     @user = current_user
+    @account = Account.new
   end
 
   def create
@@ -29,8 +29,8 @@ class AccountsController < ApplicationController
   end
 
   def edit
-    @account = Account.find_by_id(params[:id])
     @user = @account.user
+    @account = Account.find_by_id(params[:id])
   end
 
   def update
