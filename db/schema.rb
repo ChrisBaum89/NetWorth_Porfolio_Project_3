@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 2021_11_11_235718) do
     t.string "username"
     t.string "email"
     t.string "password_digest"
-    t.integer "net_worth"
+    t.integer "net_worth", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "admin", default: false
