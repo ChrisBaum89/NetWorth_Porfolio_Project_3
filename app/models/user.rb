@@ -9,6 +9,9 @@ class User < ApplicationRecord
   validates :email, presence: true
   validates :email, uniqueness: true
 
+  scope :admin, -> { where(admin: true) }
+  scope :standard, -> {where(admin: false)}
+
   def net_worth_calc
     self.net_worth = 0
     self.accounts.each do |account|
