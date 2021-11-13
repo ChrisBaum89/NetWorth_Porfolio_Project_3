@@ -51,7 +51,6 @@ class CategoriesController < ApplicationController
   def destroy
     if admin?
       category = Category.find_by_id(params[:id])
-
       #need to re-assign all accounts within this category to unassigned category_id
       assign_to_uncategorized(category)
       category.destroy
@@ -70,7 +69,7 @@ class CategoriesController < ApplicationController
   #assigned to "Uncategorized" category. This is to prevent users accounts from
   #being deleted or lost if an admin has to remove a category
   def assign_to_uncategorized(category)
-    uncategorized = Category.find_by(:name ["Uncategorized"])
+    uncategorized = Category.find_by(name: "Uncategorized")
     category.accounts.each do |account|
       account.category_id = uncategorized.id
       account.save
