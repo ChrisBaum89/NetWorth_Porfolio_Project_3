@@ -18,7 +18,7 @@ Specs:
 ## validations on Account (presence: name, dollar_value, account_type)
 ## validations on Category (presence: name)(uniqueness: name)
 - [x] Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)
-##created admin routes with a "home" route (.e.g. /admin/home)
+##created admin "home" route (.e.g. /admin/home)
 - [x] Include signup (how e.g. Devise)
 ## signup tested and working
 - [x] Include login (how e.g. Devise)
