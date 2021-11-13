@@ -1,6 +1,7 @@
-<!-- display errors if new object is not saved -->
+<!-- display errors if object is not saved -->
 <%= render "layouts/errors" %>
 
+<!-- new/edit object form -->
 <%= form_for(@user) do |f| %>
   <br>Username:<br>
   <%= f.text_field :username %><br><br>
