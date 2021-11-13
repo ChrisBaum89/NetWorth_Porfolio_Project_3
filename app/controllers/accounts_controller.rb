@@ -12,7 +12,7 @@ class AccountsController < ApplicationController
     @account = Account.new(account_params)
     if @account.valid?
       debt_value_check(@account)
-      update_net_worth
+      update_net_worth(@user)
       @account.save
       redirect_to account_path(@account)
     else
@@ -26,6 +26,7 @@ class AccountsController < ApplicationController
     @user = current_user
     @account = Account.find_by_id(params[:id])
     @category = Category.find_by_id(@account.category_id)
+    @updated_time = @account.updated_at.localtime.strftime('%a, %d %b %Y %H:%M:%S')
   end
 
   #index route
