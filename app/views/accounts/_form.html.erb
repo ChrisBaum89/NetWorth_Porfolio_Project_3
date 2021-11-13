@@ -1,19 +1,4 @@
-
-<% if @account.errors.any? %>
-  <div id="error_explanation">
-    <h2>
-      <%= pluralize(@account.errors.count, "error") %> prohibited this account from being saved:
-    </h2>
-
-    <ul>
-      <% @account.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
-
-
+<%= render "layouts/errors" %>
 
 <%= form_for(@account) do |f| %>
   <br>Account Name:<br>
