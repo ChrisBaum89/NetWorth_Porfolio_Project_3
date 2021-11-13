@@ -1,6 +1,7 @@
-<!-- error template -->
+<!-- display errors if object is not saved -->
 <%= render "layouts/errors" %>
 
+<!-- new/edit object form -->
 <%= form_for(@category) do |f| %>
   <br>Category Name:<br>
   <%= f.text_field :name %><br><br>
