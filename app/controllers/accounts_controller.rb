@@ -47,6 +47,8 @@ class AccountsController < ApplicationController
   def update
     account = Account.find_by_id(params[:id])
     account.update(account_params)
+    debt_value_check(account)
+    account.save
     redirect_to account_path(account)
   end
 
