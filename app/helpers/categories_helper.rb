@@ -4,6 +4,10 @@ module CategoriesHelper
     category.users.uniq.count
   end
 
+  def account_count(category)
+    category.accounts.uniq.count
+  end
+
   #calculates total value of a category
   def total_value(category)
     total_value = 0
