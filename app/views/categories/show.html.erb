@@ -6,6 +6,8 @@ Number of Users: <%=users_count(@category)%><br><br>
 
 Number of Accounts: <%= number_with_delimiter(account_count(@category)) %><br><br><br>
 
+<!-- Links to edit/delete categories. Prevents deleting of Uncategorized category.
+  Uncategorized category is a catch all for accounts that had a category deleted -->
 <% if @category.name != "Uncategorized" %>
   <%=link_to "Edit Category", edit_category_path(@category) %><br><br>
   <%= link_to "Delete Category", @category, method: :delete, data: {confirm: "Are you sure you want to delete the category?"} %>
