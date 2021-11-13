@@ -36,8 +36,10 @@ class AccountsController < ApplicationController
 
   #edit route
   def edit
+    @account = Account.find_by_id(params[:id])
     @user = @account.user
     @account = Account.find_by_id(params[:id])
+    @error_variable = @account
   end
 
   #update route
