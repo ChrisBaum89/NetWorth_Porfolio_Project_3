@@ -32,6 +32,7 @@ class UsersController < ApplicationController
   #show route
   def show
     @user = User.find_by_id(params[:id])
+    update_net_worth(@user)
     @admin = admin?
     #prevent users from being able to see other users
     if (current_user.id == @user.id) || admin?
