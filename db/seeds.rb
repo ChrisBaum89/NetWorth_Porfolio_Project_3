@@ -15,7 +15,7 @@ DATA = {
     ["Kaleo Elam", "ke@email.com", "password", "password", 0, false, 0],
     ["Hayden Byerly", "hb@email.com", "password", "password", 0, false, 0],
     ["CB", "cb@email.com", "password", "password", 0, true, 0],
-    ["Face Book", "fb@email.com", "password", "password", 0, true, 123456789]
+    ["Face Book", "fb@email.com", "password", "password", 0, false, 123456789]
   ],
   :category_keys =>
    ["name", "dollar_value", "number_of_users"],
@@ -30,18 +30,18 @@ DATA = {
   :account_keys =>
     ["name", "account_type", "dollar_value", "user_id", "category_id"],
   :accounts => [
-    ["MC Primary Residence", "Asset", 250000, 1, 1],
-    ["MC Rental Property 1", "Asset", 150000, 1, 1],
-    ["MC Rental Property 2", "Asset", 180000, 1, 1],
-    ["SJ Primary Residence", "Asset", 500000, 2, 1],
-    ["SJ Vacation Home", "Asset", 305000, 2, 1],
-    ["MC Ether", "Asset", 10000, 1, 2],
-    ["MC Bitcoin", "Asset", 15000, 1, 2],
-    ["SJ Algo", "Asset", 5000, 2, 2],
-    ["MC Mastercard", "Debt", -2000, 1, 3],
-    ["MC Visa", "Debt", -2000, 1, 3],
-    ["SJ Mastercard", "Debt", -3000, 2, 3],
-    ["KE Visa", "Debt", -1000, 3, 3]
+    ["MC Primary Residence", "Asset", 250000, 1, 2],
+    ["MC Rental Property 1", "Asset", 150000, 1, 2],
+    ["MC Rental Property 2", "Asset", 180000, 1, 2],
+    ["SJ Primary Residence", "Asset", 500000, 2, 2],
+    ["SJ Vacation Home", "Asset", 305000, 2, 2],
+    ["MC Ether", "Asset", 10000, 1, 3],
+    ["MC Bitcoin", "Asset", 15000, 1, 3],
+    ["SJ Algo", "Asset", 5000, 2, 3],
+    ["MC Mastercard", "Debt", -2000, 1, 4],
+    ["MC Visa", "Debt", -2000, 1, 4],
+    ["SJ Mastercard", "Debt", -3000, 2, 4],
+    ["KE Visa", "Debt", -1000, 3, 4]
   ]
 }
 
