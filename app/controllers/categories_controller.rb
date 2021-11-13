@@ -37,7 +37,7 @@ class CategoriesController < ApplicationController
   #edit route
   def edit
     @category = Category.find_by_id(params[:id])
-    @error_variable = @account
+    @error_variable = @category
   end
 
   #update route
@@ -53,7 +53,7 @@ class CategoriesController < ApplicationController
       category = Category.find_by_id(params[:id])
 
       #need to re-assign all accounts within this category to unassigned category_id
-      assign_to_uncategorized
+      assign_to_uncategorized(category)
       category.destroy
       redirect_to categories_path
     end
@@ -69,10 +69,10 @@ class CategoriesController < ApplicationController
   #When admin deletes a category, all accounts associated with that category are
   #assigned to "Uncategorized" category. This is to prevent users accounts from
   #being deleted or lost if an admin has to remove a category
-  def assign_to_uncategorized
+  def assign_to_uncategorized(category)
     uncategorized = Category.find_by(:name ["Uncategorized"])
     category.accounts.each do |account|
-      account.category_id = uncategorized
+      account.category_id = uncategorized.id
       account.save
     end
   end
