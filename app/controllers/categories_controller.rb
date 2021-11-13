@@ -2,20 +2,24 @@ class CategoriesController < ApplicationController
   include CategoriesHelper
   before_action :logged_in_admin?
 
+
   #index route
   def new
     @category = Category.new
+    @error_variable = @category
   end
 
   #create route
   def create
     @category = Category.new(category_params)
 
+
     #verify category is valid before saving
     if @category.valid?
       @category.save
       redirect_to category_path(@category)
     else
+      @error_variable = @category
       render :new
     end
   end
