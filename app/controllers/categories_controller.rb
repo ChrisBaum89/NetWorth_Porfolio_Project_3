@@ -63,8 +63,6 @@ class CategoriesController < ApplicationController
     params.require(:category).permit(:name, :dollar_value, :number_of_users)
   end
 
-
-
   #When admin deletes a category, all accounts associated with that category are
   #assigned to "Uncategorized" category. This is to prevent users accounts from
   #being deleted or lost if an admin has to remove a category
