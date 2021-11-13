@@ -1,8 +1,13 @@
 <h1>Users</h1>
-<% @users.each do |user| %>
+
+<h3>Standard Users</h3>
+<% User.standard.each do |user| %>
   <%= link_to user.username, user_path(user) %>
-  <% if user.admin == true %>
-    (admin)
-  <% end %>
+  <br><br>
+<% end %>
+
+<h3>Admin Users </h3>
+<% User.admin.each do |user| %>
+  <%= link_to user.username, user_path(user) %>
   <br><br>
 <% end %>
