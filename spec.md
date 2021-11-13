@@ -35,8 +35,12 @@ Specs:
 ##validation errors display on forms for Categories, Users, and Accounts
 
 Confirm:
-- [ ] The application is pretty DRY
-- [ ] Limited logic in controllers
-- [ ] Views use helper methods if appropriate
+- [x] The application is pretty DRY
+## used _form for form generation and even created a custom layout "_errors.html.erb" to prevent repeating error generation code.
+- [x] Limited logic in controllers
+##reviewed and believe logic is limited and each method has a singular purpose
+- [x] Views use helper methods if appropriate
+##admin view has multiple helper methods used.
+##categories views have multiple helper methods used
 - [x] Views use partials if appropriate
 ## partials used when doing new/edit forms
