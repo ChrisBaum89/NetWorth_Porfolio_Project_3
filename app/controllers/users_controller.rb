@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   #new route
   def new
     @user = User.new
+    @error_variable = @user
   end
 
   #create route
@@ -15,6 +16,7 @@ class UsersController < ApplicationController
         session[:user_id] = @user.id
         redirect_to user_path(@user)
       else
+        @error_variable = @user
         render :new
       end
     else

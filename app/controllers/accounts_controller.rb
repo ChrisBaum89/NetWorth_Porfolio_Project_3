@@ -3,6 +3,7 @@ class AccountsController < ApplicationController
   def new
     @user = current_user
     @account = Account.new
+    @error_variable = @account
   end
 
   #create route
@@ -15,6 +16,7 @@ class AccountsController < ApplicationController
       @account.save
       redirect_to account_path(@account)
     else
+      @error_variable = @account
       render :new
     end
   end
