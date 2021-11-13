@@ -43,4 +43,4 @@ Confirm:
 ##admin view has multiple helper methods used.
 ##categories views have multiple helper methods used
 - [x] Views use partials if appropriate
-## partials used when doing new/edit forms
+## partials used when doing new/edit forms and also created a _errors layout to prevent having to repeat error generation code
