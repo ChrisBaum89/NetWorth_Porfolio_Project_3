@@ -37,6 +37,7 @@ class CategoriesController < ApplicationController
   #edit route
   def edit
     @category = Category.find_by_id(params[:id])
+    @error_variable = @account
   end
 
   #update route
