@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>NetWorthPortfolioProject3</title>
+    <title>Net Worth Tracker</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -9,6 +9,7 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 <br>
+    <center><h2> Net Worth Tracker </h2></center>
     <% if logged_in? %>
         <% if current_user.admin == false %>
           <%= link_to 'Home', user_path(session[:user_id]) %>
