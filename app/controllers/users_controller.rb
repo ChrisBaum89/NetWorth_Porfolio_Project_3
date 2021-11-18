@@ -39,7 +39,11 @@ class UsersController < ApplicationController
       @categories = @user.categories.uniq
       @accounts = @user.accounts
     else
-      redirect_to user_path(current_user)
+      if logged_in?
+        redirect_to user_path(current_user)
+      else
+        redirect_to signin_path
+      end
     end
   end
 
