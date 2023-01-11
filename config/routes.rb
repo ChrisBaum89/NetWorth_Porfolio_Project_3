@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get '/auth/facebook/callback' => 'sessions#create'
 
   get '/admin/home' => 'admin#home'
+  get '/admin/sortedaccounts' => 'admin#sortedaccounts'
 
   #category paths
   resources :categories, only: [:new, :create, :index, :show, :edit, :update, :destroy]

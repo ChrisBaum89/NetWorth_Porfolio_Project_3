@@ -1,0 +1,6 @@
+<h1>Largest To Smallest Accounts</h1>
+
+<% Account.sorted.each do |account| %>
+  <%=account.name%><br>
+  <%=account.dollar_value%><br><br>
+<% end %>
